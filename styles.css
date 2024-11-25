@@ -1,0 +1,206 @@
+/* Ajustes globales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #c2e9fb, #a1c4fd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Fondo animado */
+body.pag3-background {
+    background: linear-gradient(135deg, #fddde6, #a3d2ca, #ffe5d9, #c3bef0);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.content-container {
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #6c5b7b;
+}
+
+#characters-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#penguin-container, #cat-container {
+    margin: 0 20px;
+}
+
+#penguin, #cat {
+    width: 100px;
+    cursor: pointer;
+}
+
+#message-bubble {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 150px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-size: 1em;
+    color: #333;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#message-bubble.expanded {
+    max-height: none;
+}
+
+#buttons-container {
+    margin-top: 20px;
+}
+
+.proposal-btn {
+    padding: 10px 20px;
+    background-color: #6c5b7b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.proposal-btn:hover {
+    background-color: #3b3b3b;
+}
+
+@keyframes bobbing {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+#penguin.walk {
+    animation: bobbing 0.4s infinite alternate;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#penguin.jump {
+    animation: jump 0.6s ease forwards;
+}
+
+#yes-btn.grow {
+    transform: scale(1.5);
+    transition: transform 0.15s ease;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .content-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .proposal-btn {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 1em;
+    }
+
+    #penguin {
+        width: 80px;
+    }
+
+    #message-bubble {
+        width: 120px;
+        font-size: 0.9em;
+    }
+
+    #restart-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    #yes-btn, #no-btn {
+        padding: 10px 20px;
+    }
+}
+/* Estilo global para botones */
+.bienvenida-btn {
+    background-color: #6c5b7b; /* Color de fondo pastel suave */
+    color: white; /* Color de texto blanco */
+    font-size: 1.2em; /* Tamaño de la fuente */
+    padding: 12px 25px; /* Relleno interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer; /* El cursor cambia al pasar por encima */
+    transition: all 0.3s ease; /* Efecto suave en las transiciones */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efecto de hover para el botón */
+.bienvenida-btn:hover {
+    background-color: #a3a2b4; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta el tamaño del botón ligeramente */
+}
+
+/* Efecto de foco (cuando el botón recibe el foco, por ejemplo, al hacer clic) */
+.bienvenida-btn:focus {
+    outline: none; /* Remueve el contorno del borde */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* Añade una sombra más pronunciada */
+}
+
+/* Animación de entrada para el botón */
+.bienvenida-btn {
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* El botón empieza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* El botón se coloca en su lugar original */
+    }
+}

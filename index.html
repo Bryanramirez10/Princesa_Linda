@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinguino y Gato Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pag3-background">
+    <audio id="background-audio" autoplay loop>
+        <source src="Cancion.mp3" type="audio/mp3">
+        
+    </audio>
+
+    <div class="content-container">
+        <div id="characters-container">
+            <div id="penguin-container">
+                <img id="penguin" src="Pinguino.png" alt="Pingüino" class="character">
+            </div>
+            <div id="cat-container">
+                <img id="cat" src="Gatito.png" alt="Gato" class="character">
+            </div>
+            <div id="message-bubble"></div>
+        </div>
+        <div id="buttons-container">
+            <button id="next-btn" class="proposal-btn">Siguiente</button>
+            <button id="restart-btn" class="proposal-btn">Reiniciar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
